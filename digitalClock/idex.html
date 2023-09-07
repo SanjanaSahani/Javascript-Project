@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalClock</title>
+</head>
+<style>
+    body{
+        background-color: rgb(19, 19, 19);
+        color: #fff;
+        font-family: 'Courier New', Courier, monospace;
+
+    }
+    #clock{
+        position: absolute;
+        top: 40%;
+        left: 40%;
+
+    }
+    h1{
+        margin-left: 70px;
+        
+    }
+    #time{
+        display: flex;
+        font-size: 20px;  
+    }
+    .hour, .minute , .second{
+        display: grid;
+        grid-template-rows: 2;
+        margin-right: 20px;
+    }
+    
+   
+</style>
+<body>
+    <div id="clock">
+        <h1>Time</h1>
+        <div id="time">
+            <div class="hour"> <span id="hour">00</span><span>Hours</span></div> 
+            <div class="minute"> <span id="minutes">00</span><span>minutes</span></div> 
+            <div class="second"> <span id="seconds">00</span><span>seconds</span></div> 
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+   function clock(){
+
+    var hours = document.getElementById('hour');
+    var minutes = document.getElementById('minutes');
+    var seconds = document.getElementById('seconds');
+
+    var h = new Date().getHours();
+    var m = new Date().getMinutes();
+    var s = new Date().getSeconds();
+
+    hours.innerHTML = h;
+    minutes.innerHTML = m;
+    seconds.innerHTML = s;
+   }
+ var interval = setInterval(clock,1000);
+  
+</script>
+</html>
