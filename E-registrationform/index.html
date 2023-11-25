@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-registration form</title>
+</head>
+<script>
+    function validateForm(){
+        // for tutor login info 
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        // for username validation 
+        if (username.length > 20 || !/^[a-zA-Z0-9]+$/.test(username)){
+            alert("Desired Username should not more than 20 character & should not contain any special character.");
+            return false;
+        }
+        // for password validation 
+          if (password.length < 8 || password.length > 20  || !/[A-Z]/.test(password) || !/[a-z]/.test(password) || /[0-9]/.test(password) ){
+            alert("Passwod should have atleast 8 characters,not more than 20 , at least one uppercase letter, one lowercase letter, and one number.");
+            return false;
+        }
+         return true;
+    }
+</script>
+<body >
+    <form   onsubmit=" return validateForm()">
+        <h2>Tutor login form</h2>
+    <div style="margin-left: 30%; color: brown;">
+        <label for = "username">Desired username :*</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for = "password">Choose Password :*</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label for = "Select">Select Question :</label>
+        <select style="width: 150px; margin-left: 14px;" name = "Question" id="Question">
+            <option value=" Question"> </option>
+            <option value="first Question"> first Question</option>
+            <option value="Second  Question">Second  Question</option>
+            <option value="third Question">third Question</option>
+        </select>
+        <br>
+        <label for = "answer">Answer :</label>
+        <input style="width: 200px; margin-left: 62px;" type="text" id="answer" name="answer" required>
+
+    </div>
+        <h2>Personal Detail and tutor contact information</h2>
+      <div style="margin-left: 30%;color: brown; ">
+        <label >Name :*</label>
+        <input style="margin-left: 72px;" type="text" id="username" name="username" required>
+        <br>
+        <label  >Gender :*</label>
+        <select style="width: 90px; margin-left: 64px;" name = "gender" id="gender">
+            <option value=" gender"> gender</option>
+            <option value="first "> Male</option>
+            <option value="Second ">Female</option>
+            
+        </select>
+        <label >Age :*</label>
+        <select style="width: 90px;" name = "gender" id="gender">
+            <option value="Age"> Select</option>
+            
+        </select>
+        <br>
+        <label >Country :</label>
+        <input style="margin-left: 54px;" type="text" name="Country" required>
+        <br>
+        <label >location :*</label>
+        <select style="width: 150px; margin-left: 54px;" name = "location" id="location">
+            <option value="location">  select your location</option>
+            
+        </select>
+        <br>
+        <label >Postal/ZipCode :*</label>
+        <input style="margin-left: 10px;"  type="number" name="Code" required>
+        <br>
+        <label >Area :*</label>
+        <input  style="margin-left: 70px;" type="text" name="area" required>
+        <br>
+        <label >Present Address:*</label>
+        <input style="height: 60px;" type="text" name="adress" required>
+        <br>
+        <label >Contact Number :*</label>
+        <input type="number" name="number" required>
+        <br>
+        <label >Email Address :*</label>
+        <input  style="margin-left: 10px;" type="text" name="email" required>
+        <br>
+        <label for="uploadPhoto">Upload Photo</label>
+        <input   style="margin-left: 40px;" type="file" name="file" id="file">
+        <br>
+            <!-- for submit button  -->
+            <input  style=" background-color: rgb(0, 162, 255); color: white; padding: 10px; margin-left:150px ; margin-top: 30px" type="submit" value="Continue">
+
+      </div>
+    
+    </form>
+</body>
+</html>
