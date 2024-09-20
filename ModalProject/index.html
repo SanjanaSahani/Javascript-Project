@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Project</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(background.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 550px;
+        }
+
+        .container h1 {
+            margin-bottom: 20px;
+        }
+
+        .container button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .container button:hover {
+            background-color: #3700b3;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            margin-bottom: 20px;
+        }
+
+        .modal-content button {
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal-content button:hover {
+            background-color: #3700b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to the Modal Project</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda cum doloremque, sed quibusdam illum, earum nihil ipsum quis, rem nobis esse placeat totam ab non.</p>
+        <button onclick="openModal()">Open Modal</button>
+    </div>
+
+    <div class="modal" id="myModal" aria-hidden="true">
+        <div class="modal-content">
+            <h2>Modal Project</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci molestias tenetur aspernatur ea commodi impedit?</p>
+            <button onclick="closeModal()">Close Modal</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            const modal = document.getElementById('myModal');
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            modal.querySelector('button').focus(); 
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('myModal');
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.querySelector('.container button').focus(); 
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function (event) {
+            if (event.key === "Escape" && document.getElementById('myModal').classList.contains('active')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>
+
