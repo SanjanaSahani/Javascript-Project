@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page </title>
+    <style>
+        .title {
+
+            text-align: center;
+            font-family: fangsong;
+            font-size: 20px;
+        }
+
+        .heading {
+            color: #cb8027;
+            text-align: center;
+            font-family: fangsong;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section {
+            font-family: fangsong;
+            text-align: start;
+            width: 65%;
+        }
+
+        .card {
+            border: 1px solid grey;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        .question {
+            color: black;
+            font-size: 20px;
+        }
+
+        .answer {
+            display: none;
+            color: gray;
+        }
+
+        span {
+            float: right;
+            cursor: pointer;
+            /* display: none; */
+        }
+
+        #plus {
+            visibility: visible;
+        }
+
+        #minus {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">FAQ Page</h1>
+    <h1 class="heading">General Questions</h1>
+    <div class="container">
+        <div class="section">
+            <div class="card">
+                <h1 class="question">What is the basic knowledge of front-end development? <span id="plus">+</span>
+                    <span id="minus">-</span>
+                </h1>
+                <p class="answer">Front-end developers require a specific set of skills to effectively create user
+                    interfaces. This includes proficiency in coding languages like HTML, CSS, and JavaScript, as well as
+                    a
+                    strong understanding of CSS preprocessors such as Sass and Less.</p>
+            </div>
+            <div class="card">
+                <h1 class="question">What do you understand by Version Control System?<span id="plus">+</span> <span
+                        id="minus">-</span></h1>
+                </h1>
+                <p class="answer">A Version Control System (VCS) is a program that is used to record any changes to a
+                    file
+                    or set of data so that we can restore it to a previous version if needed. It ensures that everyone
+                    on
+                    the team is working on the most up-to-date file version.</p>
+            </div>
+            <div class="card">
+                <h1 class="question">What do you understand by a callback function?<span id="plus">+</span> <span
+                        id="minus">-</span></h1>
+                </h1>
+                <p class="answer">A callback function is a function that is passed as an argument to another function
+                    and
+                    ensures that a function is not going to run before a task is completed. This function runs right
+                    after
+                    the task has been completed.</p>
+            </div>
+            <div class="card">
+                <h1 class="question"> What do you understand by the CSS box model?<span id="plus">+</span> <span
+                        id="minus">-</span></h1>
+                </h1>
+                <p class="answer">The CSS box model is a way to handle CSS layout. This term is used when we talk about
+                    the
+                    design and layout of th elements. Each element is composed of its content, padding, border, and
+                    margin.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    document.querySelectorAll('.card').forEach(card => {
+        const plusButton = card.querySelector('#plus');
+        const minusButton = card.querySelector('#minus');
+        const answer = card.querySelector('.answer');
+
+        plusButton.addEventListener('click', function () {
+            answer.style.display = "block";
+            minusButton.style.visibility = "visible";
+            plusButton.style.visibility = "hidden";
+        });
+
+        minusButton.addEventListener('click', function () {
+            answer.style.display = "none";
+            minusButton.style.visibility = "hidden";
+            plusButton.style.visibility = "visible";
+        });
+    });
+
+
+</script>
+
+</html>
