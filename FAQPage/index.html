@@ -114,25 +114,39 @@
 </body>
 <script>
 
-    document.querySelectorAll('.card').forEach(card => {
-        const plusButton = card.querySelector('#plus');
-        const minusButton = card.querySelector('#minus');
-        const answer = card.querySelector('.answer');
 
-        plusButton.addEventListener('click', function () {
-            answer.style.display = "block";
-            minusButton.style.visibility = "visible";
-            plusButton.style.visibility = "hidden";
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+    const plusButton = card.querySelector('#plus');
+    const minusButton = card.querySelector('#minus');
+    const answer = card.querySelector('.answer');
+
+    plusButton.addEventListener('click', function () {
+        // Close all other answers
+        cards.forEach(c => {
+            const otherAnswer = c.querySelector('.answer');
+            const otherPlusButton = c.querySelector('#plus');
+            const otherMinusButton = c.querySelector('#minus');
+
+            if (otherAnswer !== answer) {
+                otherAnswer.style.display = "none";
+                otherMinusButton.style.visibility = "hidden";
+                otherPlusButton.style.visibility = "visible";
+            }
         });
 
-        minusButton.addEventListener('click', function () {
-            answer.style.display = "none";
-            minusButton.style.visibility = "hidden";
-            plusButton.style.visibility = "visible";
-        });
+        // Open the current answer
+        answer.style.display = "block";
+        minusButton.style.visibility = "visible";
+        plusButton.style.visibility = "hidden";
     });
 
-
+    minusButton.addEventListener('click', function () {
+        answer.style.display = "none";
+        minusButton.style.visibility = "hidden";
+        plusButton.style.visibility = "visible";
+    });
+});
 </script>
-
 </html>
