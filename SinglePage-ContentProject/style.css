@@ -1,0 +1,58 @@
+body{
+    font-family: emoji !important;
+}
+.title{
+    text-align: center;
+    margin-top: 25px; 
+    color: grey !important;
+}
+.title h1{
+    color: black;
+}
+.about{
+    display: flex; 
+    gap: 25px;
+    margin-top: 2%;
+    padding: 20px;
+}
+.about-img{
+    display: contents;
+}
+.about-img img{
+    width: 50%;
+    filter: drop-shadow(2px 4px 6px black);
+    border-radius: 20px;
+}
+.btn-container{
+    background: grey;
+    border-radius: 4px;
+    padding: 9px;
+}
+.btn{
+    background: grey;
+    border: none;
+    color: white;
+    font-weight: bold;
+
+}
+.content{
+display: none;
+}
+.content p{
+    color: grey !important;
+}
+.btn.active{
+    color: white;
+    border: none;
+}
+.content.active{
+    display: block;
+}
+@media only screen and (max-width: 600px) {
+    .about {
+      flex-wrap: wrap;
+    }
+    .about-img img{
+        width: 100%;
+    }
+  }
