@@ -44,6 +44,7 @@ display: none;
 .btn.active{
     color: white;
     border: none;
+    font-size: 21px;
 }
 .content.active{
     display: block;
