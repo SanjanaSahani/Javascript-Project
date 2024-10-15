@@ -1,0 +1,54 @@
+.heading{
+    text-align: center;
+    color: rgb(21, 21, 56);
+}
+.iphone img{
+    border-radius: 10px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:5% 8% 2% 8%;
+    gap: 20px;
+}
+.Giveaway-Content{
+    display: grid;
+}
+.Giveaway-Content h1{
+   color: rgb(21, 21, 56);
+   margin-bottom: 5px;
+}
+.Giveaway-Content span{
+   margin-bottom: 15px;
+   color: blueviolet;
+}
+.timer{
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+}
+.timer div{
+    border: 2px solid transparent;
+    background-color: rgb(21, 21, 56);
+    color: white;
+    padding: 10px;
+}
+.timer div h1{
+    text-align: center;
+    color: white;
+    
+}
+.timer div h1,p{
+    margin: 0;
+    padding: 0;
+}
+.expired{
+    color: blueviolet;
+    font-weight: bolder;
+}
+@media only screen and (max-width: 600px) {
+   .container{
+    flex-wrap: wrap;
+   }
+  }
