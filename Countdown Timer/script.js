@@ -62,7 +62,7 @@ function getRemainingTime() {
   }
 
   items.forEach(function (item, index) {
-    item.innerHTML = values[index];
+    item.innerHTML = format(values[index]);
   });
   if (t < 0) {
     clearInterval(countdown);
