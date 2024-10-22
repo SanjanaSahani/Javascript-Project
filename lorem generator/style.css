@@ -1,0 +1,33 @@
+.title{
+    text-align: center;
+    color: rgb(12, 73, 73);
+}
+.form-content{
+    text-align: center;
+}
+.text{
+    letter-spacing: 1px;
+}
+#number{
+    width: 40px;
+    border-radius: 5px;
+}
+.btn{
+    background-color: rgb(12, 73, 73);
+    color: #fff;
+    border-radius: 5px;
+    padding: 2px 15px 2px 15px;
+}
+.btn:hover{
+    background-color: rgb(40, 122, 122);
+}
+.generated-para{
+    margin: 5%;
+    text-align: center;
+}
+.generated-para p{
+    color: gray;
+}
+.result{
+    color:gray
+}
